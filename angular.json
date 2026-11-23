@@ -1,24 +1,10 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm"
-  },
   "newProjectRoot": "projects",
   "projects": {
-    "fieldOps": {
+    "fieldops-angular": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "standalone": false
-        },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
-        }
-      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -26,7 +12,12 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/fieldops-angular",
+            "index": "src/index.html",
             "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -35,7 +26,19 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
+              "src/styles.css",
+              "src/app/pages/login/login.component.css",
+              "src/app/pages/dashboard/dashboard.component.css",
+              "src/app/pages/acompanhamento/acompanhamento.component.css",
+              "src/app/pages/planejar-inspecao/planejar-inspecao.component.css",
+              "src/app/pages/checklists/checklists.component.css",
+              "src/app/pages/cadastros/cadastros.component.css",
+              "src/app/pages/revisao/revisao.component.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -43,13 +46,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1.5mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "12kb",
+                  "maximumError": "20kb"
                 }
               ],
               "outputHashing": "all"
@@ -66,16 +69,13 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "fieldOps:build:production"
+              "buildTarget": "fieldops-angular:build:production"
             },
             "development": {
-              "buildTarget": "fieldOps:build:development"
+              "buildTarget": "fieldops-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
         }
       }
     }

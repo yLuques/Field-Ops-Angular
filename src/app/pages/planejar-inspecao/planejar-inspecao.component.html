@@ -1,0 +1,230 @@
+<header class="app-topbar">
+<a class="brand" routerLink="/dashboard"><span class="brand-mark"><i class="bi bi-shield-check"></i></span><span>FIELD OPS<small>SUPERVISION HUB</small></span></a><span class="badge text-bg-primary-subtle text-primary-emphasis d-none d-md-inline">v2.4-PRO</span><span class="small-label d-none d-xl-inline"><i class="bi bi-circle-fill text-success me-1" style="font-size:7px"></i>Plantão ativo</span>
+<div class="input-group input-group-sm top-search"><span class="input-group-text bg-light border-0"><i class="bi bi-search text-secondary"></i></span><input aria-label="Busca geral" class="form-control bg-light border-0" placeholder="Buscar OS, inspetor, local..."/></div>
+<button aria-label="Notificações" class="btn-icon position-relative" type="button"><i class="bi bi-bell"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:8px">3</span></button>
+<div class="top-user">
+<div class="avatar">CE</div>
+<div class="user-meta">
+<div class="fw-semibold small">Carlos Eduardo</div>
+<div class="text-muted" style="font-size:.68rem">Supervisor de Campo</div>
+</div>
+</div>
+</header>
+<nav aria-label="Navegação principal" class="mobile-page-nav"><a class="side-link" routerLink="/dashboard"><i class="bi bi-grid-1x2"></i><span>Dashboard</span></a><a class="side-link" routerLink="/acompanhamento"><i class="bi bi-list-check"></i><span>Acompanhamento</span></a><a class="side-link active" routerLink="/planejar-inspecao"><i class="bi bi-clipboard-plus"></i><span>Planejar
+                Inspeção</span></a><a class="side-link" routerLink="/checklists"><i class="bi bi-ui-checks-grid"></i><span>Modelos de Checklist</span></a><a class="side-link" routerLink="/cadastros"><i class="bi bi-box-seam"></i><span>Cadastros</span></a><a class="side-link" routerLink="/revisao"><i class="bi bi-patch-check"></i><span>Revisão Técnica</span></a></nav>
+<aside class="app-sidebar">
+<div class="nav-caption">Operações em campo</div><a class="side-link" routerLink="/dashboard"><i class="bi bi-grid-1x2"></i><span>Dashboard</span></a><a class="side-link" routerLink="/acompanhamento"><i class="bi bi-list-check"></i><span>Acompanhamento</span></a><a class="side-link active" routerLink="/planejar-inspecao"><i class="bi bi-clipboard-plus"></i><span>Planejar
+                Inspeção</span></a><a class="side-link" routerLink="/checklists"><i class="bi bi-ui-checks-grid"></i><span>Modelos de Checklist</span></a><a class="side-link" routerLink="/cadastros"><i class="bi bi-box-seam"></i><span>Cadastros</span></a><a class="side-link" routerLink="/revisao"><i class="bi bi-patch-check"></i><span>Revisão Técnica</span></a>
+<div class="telemetry-box">
+<div class="d-flex justify-content-between mb-1"><strong><i class="bi bi-broadcast me-1"></i>Rede
+                    Telemetria</strong><b class="text-success">100% OK</b></div><span>18 inspetores sincronizados no
+                turno atual.</span>
+</div>
+</aside>
+<main class="app-main">
+<div class="page-heading">
+<div>
+<div class="crumb">Operações <span class="mx-2">›</span> Planejamento <span class="mx-2">›</span> Nova Inspeção</div>
+<h1>Planejar Nova Inspeção de Campo</h1>
+<p>Defina a ordem de serviço, atribua um técnico qualificado e vincule o checklist
+                    adequado.</p>
+</div>
+<div class="page-actions"><span class="badge-soft status-info me-2">Turno operacional · 24/MAI
+                    · D1</span><span class="badge-soft status-ok"><i class="bi bi-shield-check"></i>SLA
+                    padrão ativo</span></div>
+</div>
+<div>
+<div class="row g-3">
+<div class="col-xl-8">
+<section class="card mb-3">
+<div class="card-header p-3">
+<div class="d-flex align-items-center gap-2"><span class="step-number">1</span>
+<div>
+<h2 class="section-title">Dados do Ativo e Localização</h2><small class="text-muted">Identificação do cliente contratante e do
+                                        equipamento industrial</small>
+</div>
+</div>
+</div>
+<div class="card-body p-3 p-lg-4">
+<div class="row g-3">
+<div class="col-md-6"><label class="form-label">Cliente / Contrato Master
+                                        *</label><select class="form-select" required="">
+<option>PetroLogística S.A. - Contrato Master #4012</option>
+<option>TransPetro Refinaria Norte - #2099</option>
+<option>Terminal Químico Vale do Paraíba - #8841</option>
+</select></div>
+<div class="col-md-6"><label class="form-label">Local / Planta Industrial
+                                        *</label><select class="form-select" required="">
+<option>Terminal Portuário Sul - Sala de Bombas 02</option>
+<option>Pier de Atracação A - Subestação
+                                            Secundária</option>
+<option>Pátio de Tanques TK-40 - Estação Elevatória
+                                        </option>
+</select></div>
+<div class="col-md-12"><label class="form-label">Equipamento crítico (TAG)
+                                        *</label><select class="form-select" id="assetSelect" required="">
+<option value="bomb">Bomba Centrífuga KSB 75CV (TAG-BOMB-12)</option>
+<option value="comp">Compressor Atlas Copco GA75 (TAG-COMP-04)</option>
+<option value="valve">Válvula de Bloqueio Rápido 12" (TAG-VBG-08)
+                                        </option>
+</select></div>
+<div class="col-12">
+<div class="asset-summary d-flex flex-wrap align-items-center gap-3">
+<div class="icon-box"><i class="bi bi-droplet-half"></i></div>
+<div class="flex-grow-1"><b id="assetName">TAG-BOMB-12 · Criticidade
+                                                alta</b><small class="d-block text-muted" id="assetDesc">KSB Mega-CPK
+                                                65-200 · 3.500 RPM · Pressão de trabalho: 8,2
+                                                bar</small></div><span class="badge-soft status-warn">Última
+                                            Revisão Técnica 18/04/2024</span><span class="badge-soft status-danger">1
+                                            alerta ativo</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="card mb-3">
+<div class="card-header p-3">
+<div class="d-flex align-items-center gap-2"><span class="step-number">2</span>
+<div>
+<h2 class="section-title">Protocolo de Inspeção e
+                                        Execução</h2><small class="text-muted">Definição do
+                                        checklist técnico, responsável de campo e cronograma</small>
+</div>
+</div>
+</div>
+<div class="card-body p-3 p-lg-4">
+<div class="alert alert-success py-2"><i class="bi bi-patch-check me-2"></i>Procedimento
+                                homologado</div>
+<div class="row g-3">
+<div class="col-12"><label class="form-label">Modelo de checklist *</label><select class="form-select">
+<option>Inspeção Periódica de Bombas e Sistemas
+                                            Hidráulicos (v2.4 - 24 itens)</option>
+<option>Termografia e Análise de Vibração de Mancais (v1.8
+                                            - 14 itens)</option>
+<option>Checklist Integridade Estrutural e Vedação Mecânica
+                                            (v3.0 - 32 itens)</option>
+</select></div>
+<div class="col-12"><label class="form-label">Técnico responsável
+                                        *</label><select class="form-select">
+<option>Roberto Rocha (Técnico Nível III - Rota Sul)</option>
+<option>Juliana Prado (Inspetora Nível II - Elétrica)</option>
+<option>Marcos Silva (Técnico Mecânico Sênior)</option>
+</select><small class="help-text">Carga atual: 2 OS</small></div>
+<div class="col-md-6"><label class="form-label">Data da inspeção
+                                        *</label><input class="form-control" required="" type="date" value="2024-05-24"/></div>
+<div class="col-md-6"><label class="form-label">Turno de
+                                        execução</label><select class="form-select">
+<option>Manhã (08h–12h)</option>
+<option selected="">Tarde (13h–17h)</option>
+<option>Noite (18h–22h)</option>
+</select></div>
+<div class="col-12"><label class="form-label">Prazo de conclusão</label><input class="form-control" type="datetime-local" value="2024-05-24T17:00"/></div>
+</div><label class="form-label mt-3">Nível de prioridade operacional *</label>
+<div class="row g-2" id="priorityOptions">
+<div class="col-md-4"><label class="priority-option selected"><input checked="" class="form-check-input" name="priority" type="radio" value="alta"/><span><b class="text-danger">Alta prioridade</b><small>Risco
+                                                de parada</small></span><i class="bi bi-exclamation-triangle text-danger"></i></label></div>
+<div class="col-md-4"><label class="priority-option"><input class="form-check-input" name="priority" type="radio" value="media"/><span><b>Média
+                                                prioridade</b><small>Rotina regular</small></span><i class="bi bi-flag text-warning"></i></label></div>
+<div class="col-md-4"><label class="priority-option"><input class="form-check-input" name="priority" type="radio" value="baixa"/><span><b>Baixa
+                                                prioridade</b><small>Preventiva folgada</small></span><i class="bi bi-flag text-secondary"></i></label></div>
+</div>
+</div>
+</section>
+<section class="card mb-3">
+<div class="card-header p-3">
+<div class="d-flex align-items-center gap-2"><span class="step-number">3</span>
+<div>
+<h2 class="section-title">Diretrizes e Observações de Campo</h2><small class="text-muted">Requisitos de segurança, permissões especiais e
+                                        notas para o inspetor</small>
+</div>
+</div>
+</div>
+<div class="card-body p-3 p-lg-4"><label class="form-label">Observações
+                                técnicas e alertas de execução</label><textarea class="form-control" id="fieldNotes" maxlength="500" rows="4">Atenção ao ruído do rolamento dianteiro apontado na última ronda. Requer uso obrigatório de EPI (protetor auricular duplo e capacete classe B). Verificar calibração do sensor de pressão.</textarea>
+<div class="text-end help-text mt-1"><span id="notesCount">0</span> / 500 caracteres</div>
+<label class="form-label mt-3">Protocolos obrigatórios de segurança
+                                (EHS)</label>
+<div class="row g-2">
+<div class="col-md-4">
+<div class="form-check soft-panel"><input checked="" class="form-check-input" id="pt" type="checkbox"/><label class="form-check-label" for="pt"><b>Permissão de Trabalho (PT)</b><small class="d-block text-muted">Emissão na cabine 04</small></label>
+</div>
+</div>
+<div class="col-md-4">
+<div class="form-check soft-panel"><input checked="" class="form-check-input" id="ex" type="checkbox"/><label class="form-check-label" for="ex"><b>Área Classificada / Risco Ex</b><small class="d-block text-muted">Equipamentos
+                                                intrínsecos</small></label></div>
+</div>
+<div class="col-md-4">
+<div class="form-check soft-panel"><input class="form-check-input" id="supervisor" type="checkbox"/><label class="form-check-label" for="supervisor"><b>Acompanhamento supervisor</b><small class="d-block text-muted">Apenas se houver parada</small></label></div>
+</div>
+</div>
+<div class="alert alert-info py-2 mt-3 mb-0"><i class="bi bi-info-circle me-2"></i>O
+                                inspetor receberá uma notificação no aplicativo móvel.</div>
+</div>
+</section>
+<div class="d-flex flex-wrap justify-content-end gap-2"><a class="btn btn-outline-secondary" routerLink="/dashboard">Cancelar</a><button class="btn btn-light" id="saveDraft" type="button"><i class="bi bi-file-earmark me-1"></i>Salvar como rascunho</button><button class="btn btn-primary" id="submitOS" type="button"><i class="bi bi-send me-1"></i>Emitir OS
+                            &amp; Notificar Técnico</button></div>
+</div>
+<aside class="col-xl-4">
+<section class="card mb-3">
+<div class="card-header p-3">
+<h2 class="section-title">Técnico Designado</h2>
+</div>
+<div class="card-body p-3">
+<div class="d-flex align-items-center gap-3">
+<div class="avatar avatar-large">RR</div>
+<div><span class="badge-soft status-ok">Disponível</span>
+<h3 class="h6 fw-bold mt-1 mb-0">Roberto Rocha</h3><small class="text-muted">Técnico Mecânico Nível III</small>
+</div>
+</div>
+<div class="small text-muted mt-3"><i class="bi bi-geo-alt me-2"></i>Base Sul (2,4 km do
+                                local)</div>
+<hr/><b class="small">Certificações &amp; Treinamentos Válidos</b>
+<div class="cert-list mt-2"><span><i class="bi bi-check-circle-fill text-success"></i> NR-10
+                                    (Elétrica)</span><span><i class="bi bi-check-circle-fill text-success"></i>
+                                    NR-35 (Altura)</span><span><i class="bi bi-check-circle-fill text-success"></i>
+                                    NR-33 (Espaço Confinado)</span><span><i class="bi bi-check-circle-fill text-success"></i> Vibração
+                                    N-II</span></div>
+<hr/><b class="small">Carga de trabalho hoje</b>
+<div class="d-flex justify-content-between small mt-2"><span>4h / 8h (50%)</span><b>2 OS em
+                                    execução</b></div>
+<div class="progress mt-2">
+<div class="progress-bar" style="width:50%"></div>
+</div><small class="help-text d-block mt-2">1 OS pendente pós-almoço</small>
+</div>
+</section>
+<section class="card mb-3">
+<div class="card-header p-3">
+<h2 class="section-title">Instruções de Acesso</h2>
+</div>
+<div class="card-body p-3 small">
+<div class="d-flex gap-2 mb-3"><i class="bi bi-geo-alt text-primary fs-5"></i>
+<div><b>Terminal Sul • Doca 3</b><span class="d-block text-muted">Sala de Bombas 02
+                                        · GPS ativo</span></div>
+</div>
+<div class="d-flex gap-2 mb-3"><i class="bi bi-person-vcard text-primary fs-5"></i>
+<div><b>Crachá de Terceiro Categoria A</b><span class="d-block text-muted">Apresentar integração
+                                        PetroLogística na Guarita 02.</span></div>
+</div>
+<div class="d-flex gap-2 mb-3"><i class="bi bi-telephone text-primary fs-5"></i>
+<div><b>Contato da Portaria / COI</b><span class="d-block text-muted">Ramal interno:
+                                        #4491 (Inspetor Santos)</span></div>
+</div>
+<div class="d-flex gap-2"><i class="bi bi-life-preserver text-danger fs-5"></i>
+<div><b>Ponto de Encontro de Emergência</b><span class="d-block text-muted">Zona
+                                        PE-04 ao lado do reservatório de espuma anti-incêndio.</span></div>
+</div>
+</div>
+</section>
+<section class="card p-3">
+<h2 class="section-title mb-2">Telemetria de Vibração Online</h2>
+<div class="telemetry-spark">
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div><small class="text-muted">Sensor IoT transmitindo dados em 100Hz para
+                            sincronização direta.</small><button class="btn btn-outline-secondary btn-sm mt-3" type="button"><i class="bi bi-diagram-3 me-1"></i>Abrir diagrama P&amp;ID da Sala 02</button>
+</section>
+</aside>
+</div>
+</div>
+<footer class="text-center text-muted small pt-4">Field Operations Supervision &amp; Compliance Infrastructure
+            · Demonstração de interface</footer>
+</main>
